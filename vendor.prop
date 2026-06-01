@@ -92,7 +92,7 @@ ro.vendor.vibrator_hal.texture_tick_duration=30
 
 ## SoC
 ro.soc.manufacturer=Samsung
-ro.soc.model=Exynos 9611
+ro.soc.model=Exynos 9610
 
 ## Wi-Fi
 wifi.direct.interface=p2p0
