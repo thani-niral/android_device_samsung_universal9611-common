@@ -23,7 +23,7 @@ TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_VARIANT := cortex-a73
 
 ## Architecture (Secondary)
 TARGET_2ND_ARCH := arm
@@ -46,7 +46,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_TAGS_OFFSET := 0x00000100
 BOARD_KERNEL_CMDLINE += loop.max_part=7
-TARGET_KERNEL_SOURCE := kernel/samsung/universal9611
+TARGET_KERNEL_SOURCE := kernel/samsung/universal9610
 
 BOARD_MKBOOTIMG_ARGS := --base $(BOARD_KERNEL_BASE)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
@@ -58,7 +58,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --second_offset $(BOARD_SECOND_OFFSET)
 
 # Kernel config
-TARGET_KERNEL_CONFIG := exynos9611-$(TARGET_DEVICE)_defconfig
+TARGET_KERNEL_CONFIG := exynos9610-$(TARGET_DEVICE)_defconfig
 
 # Broken Build Rules
 BUILD_BROKEN_DUP_RULES := true
@@ -73,7 +73,7 @@ BOARD_DTBO_CFG := $(COMMON_PATH)/configs/kernel/$(TARGET_DEVICE).cfg
 
 ## DTB
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-BOARD_DTB_CFG := $(COMMON_PATH)/configs/kernel/exynos9611.cfg
+BOARD_DTB_CFG := $(COMMON_PATH)/configs/kernel/exynos9610.cfg
 
 ## Camera
 $(call soong_config_set_bool,samsungCameraVars,usage_64bit,true)
@@ -87,7 +87,7 @@ BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_NO_GCC := true
 
 ## Keymaster
-$(call soong_config_set,samsungVars,target_keymaster4_library,//vendor/samsung/universal9611-common:libskeymaster4device)
+$(call soong_config_set,samsungVars,target_keymaster4_library,//vendor/samsung/universal9610-common:libskeymaster4device)
 
 ## Manifest
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
@@ -103,10 +103,10 @@ BOARD_ROOT_EXTRA_SYMLINKS := /efs:/factory
 
 ## Platform
 BOARD_VENDOR := samsung
-TARGET_BOARD_PLATFORM := universal9611
-TARGET_BOOTLOADER_BOARD_NAME := exynos9611
-TARGET_SOC := exynos9611
-include hardware/samsung_slsi-linaro/config/BoardConfig9611.mk
+TARGET_BOARD_PLATFORM := universal9610
+TARGET_BOOTLOADER_BOARD_NAME := exynos9610
+TARGET_SOC := exynos9610
+include hardware/samsung_slsi-linaro/config/BoardConfig9610.mk
 
 ## Properties
 TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
@@ -114,7 +114,7 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
 ## Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/fstab.exynos9611
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/fstab.exynos9610
 TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 
 ## Releasetools
