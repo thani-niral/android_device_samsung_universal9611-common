@@ -44,7 +44,7 @@
         "target_path": "hardware/samsung_slsi/scsc_wifibt/wpa_supplicant_lib"
     },
     {
-        "repository": "android_kernel_samsung_universal9611",
-        "target_path": "kernel/samsung/universal9611"
+        "repository":android_kernel_samsung_exynos9610_mint",
+        "target_path":"kernel/samsung/exynos9610"
     }
 ]
