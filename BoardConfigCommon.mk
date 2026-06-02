@@ -46,7 +46,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_TAGS_OFFSET := 0x00000100
 BOARD_KERNEL_CMDLINE += loop.max_part=7
-TARGET_KERNEL_SOURCE := kernel/samsung/universal9610
+TARGET_KERNEL_SOURCE := kernel/samsung/exynos9610
 
 BOARD_MKBOOTIMG_ARGS := --base $(BOARD_KERNEL_BASE)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
@@ -58,14 +58,14 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --second_offset $(BOARD_SECOND_OFFSET)
 
 # Kernel config
-TARGET_KERNEL_CONFIG := exynos9610-$(TARGET_DEVICE)_defconfig
+TARGET_KERNEL_CONFIG := exynos9610_defconfig
 
 # Broken Build Rules
 BUILD_BROKEN_DUP_RULES := true
 
 ## Display
 BOARD_MINIMUM_DISPLAY_BRIGHTNESS := 1
-TARGET_SCREEN_DENSITY := 420
+TARGET_SCREEN_DENSITY := 440
 
 ## DTBO
 BOARD_KERNEL_SEPARATED_DTBO := true
@@ -87,7 +87,7 @@ BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_NO_GCC := true
 
 ## Keymaster
-$(call soong_config_set,samsungVars,target_keymaster4_library,//vendor/samsung/universal9610-common:libskeymaster4device)
+$(call soong_config_set,samsungVars,target_keymaster4_library,//vendor/samsung/universal9611-common:libskeymaster4device)
 
 ## Manifest
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
