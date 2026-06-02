@@ -15,7 +15,7 @@
 
 COMMON_PATH := device/samsung/universal9611-common
 
-## Inherit proprietary vendor configuartion
+## Inherit proprietary vendor configuration
 include vendor/samsung/universal9611-common/BoardConfigVendor.mk
 
 ## Architecture
